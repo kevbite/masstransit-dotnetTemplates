@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Kevin Smith",
+  "classifications": [
+    "MassTransit",
+    "Service"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "identity": "MassTransit.Service",
+  "name": "MassTransit Service Application",
+  "shortName": "masstransitservice",
+  "sourceName": "MassTransitService",
+  "symbols": {
+    "Transport": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "InMemory",
+      "choices": [
+        {
+          "choice": "InMemory",
+          "description": "InMemory Transport"
+        },
+        {
+          "choice": "RabbitMQ",
+          "description": "RabbitMQ Transport"
+        }
+      ]
+    },
+    "RabbitMQTransport": {
+      "type": "computed",
+      "value": "(Transport == \"RabbitMQ\")"
+    },
+    "InMemoryTransport": {
+      "type": "computed",
+      "value": "(Transport == \"InMemory\")"
+    }
+  }
+}

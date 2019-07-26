@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--#if (transport == 'inmemory') -->
+    <PackageReference Include="MassTransit" Version="5.5.4" />
+    <!--#endif -->
+    <!--#if (transport == 'inmemory') -->
+    <PackageReference Include="MassTransit.RabbitMQ" Version="5.5.4" />
+    <!--#endif -->
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
